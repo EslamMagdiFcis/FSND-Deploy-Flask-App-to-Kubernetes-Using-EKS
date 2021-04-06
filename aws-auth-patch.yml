@@ -3,9 +3,15 @@ data:
   mapRoles: |
     - groups:
       - system:bootstrappers
-      - system:nodes
-      rolearn: arn:aws:iam::799877389536:role/eksctl-simple-jwt-api-nodegroup-n-NodeInstanceRole-DYE0UXIEC4TS
-      username: system:node:{{EC2PrivateDNSName}}
+      - system:masters
+      rolearn: arn:aws:iam::799877389536:role/UdacityFlaskDeployCBKubectlRole
+      username: build      
+
+    - groups:
+    - system:bootstrappers
+    - system:nodes
+    rolearn: arn:aws:iam::799877389536:role/eksctl-simple-jwt-api-nodegroup-n-NodeInstanceRole-17C402QC9VF6L
+    username: system:node:{{EC2PrivateDNSName}}
   mapUsers: |
     []
 kind: ConfigMap
